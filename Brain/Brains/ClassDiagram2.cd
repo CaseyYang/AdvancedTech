@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Brains.Programm" Collapsed="true">
+    <Position X="6.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Brains.StaticHelp">
+    <Position X="8.75" Y="1.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAAAAgQAAAAAAAAAAAACBAAIAAAAQAAAAAAAA=</HashCode>
+      <FileName>Synapse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Brains.Brain">
+    <Position X="0.5" Y="0.5" Width="2.75" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="Brains.Brain.Genome">
+        <TypeIdentifier>
+          <NewMemberFileName>Synapse.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="Brains.Brain.Neuron">
+        <TypeIdentifier>
+          <NewMemberFileName>Synapse.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>BBEAAAAAAAMEAAgACCAIAAQEEiBIFAIEBAQjkAQQABI=</HashCode>
+      <FileName>Synapse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Brains.HCloner">
+    <Position X="3.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Synapse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Brains.Trainmode" Collapsed="true">
+    <Position X="6.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Synapse.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Brains.Transferfunction" Collapsed="true">
+    <Position X="6.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Synapse.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>
