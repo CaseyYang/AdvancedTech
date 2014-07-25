@@ -53,6 +53,7 @@
     <Compile Include="Synapse.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ReadMe.txt" />
     <Content Include="TEST1.bmp">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

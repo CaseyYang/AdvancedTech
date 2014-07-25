@@ -16,6 +16,13 @@ namespace Brains
 {
     public static class StaticHelp
     {
+        static int seed = Environment.TickCount;
+        static readonly ThreadLocal<Random> random = new ThreadLocal<Random>(() => new Random(Interlocked.Increment(ref seed)));//这里用ThreadLocal有必要吗？
+        public static Random Rand
+        {
+            get { return random.Value; }
+            private set { }
+        }
         /// <summary>
         ///给定集合和要比较的成员，使用该集合中元素类型的默认排序顺序比较器，找出集合中的最大值
         /// </summary>
@@ -28,7 +35,6 @@ namespace Brains
         {
             return source.MaxBy(selector, Comparer<TKey>.Default);
         }
-
         public static TSource MaxBy<TSource, TKey>(this IEnumerable<TSource> source, Func<TSource, TKey> selector, IComparer<TKey> comparer)
         {
             if (source == null) throw new ArgumentNullException("source");
@@ -54,21 +60,7 @@ namespace Brains
                 }
                 return max;
             }
-
-
         }
-
-
-        static int seed = Environment.TickCount;
-
-        static readonly ThreadLocal<Random> random = new ThreadLocal<Random>(() => new Random(Interlocked.Increment(ref seed)));//这里用ThreadLocal有必要吗？
-
-        public static Random Rand
-        {
-            get { return random.Value; }
-            private set { }
-        }
-
         /// <summary>
         /// 把集合values填充入动态集合x中
         /// </summary>
@@ -83,7 +75,6 @@ namespace Brains
             }
             return x;
         }
-
         /// <summary>
         /// 序列化相关？
         /// </summary>
@@ -99,7 +90,6 @@ namespace Brains
 
             return ms.ToArray();
         }
-
         /// <summary>
         /// 反序列化相关
         /// </summary>
@@ -112,7 +102,6 @@ namespace Brains
             memStream.Write(Serializedcontrol, 0, Serializedcontrol.Length);
             memStream.Seek(0, SeekOrigin.Begin);
             var child = binForm.Deserialize(memStream);
-
             return child;
         }
     }
