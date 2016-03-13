@@ -37,14 +37,14 @@ def stdev(numbers):
     return math.sqrt(variance)
  
 def summarize(dataset):
-    summaries = [(mean(attribute), stdev(attribute)) for attribute in zip(*dataset)]
+    summaries = [(mean(attribute), stdev(attribute)) for attribute in zip(*dataset)]# 注意zip函数和*的用法
     del summaries[-1]
     return summaries
  
 def summarizeByClass(dataset):
     separated = separateByClass(dataset)
     summaries = {}
-    for classValue, instances in separated.iteritems():
+    for classValue, instances in separated.items():
         summaries[classValue] = summarize(instances)
     return summaries
  
@@ -54,7 +54,7 @@ def calculateProbability(x, mean, stdev):
  
 def calculateClassProbabilities(summaries, inputVector):
     probabilities = {}
-    for classValue, classSummaries in summaries.iteritems():
+    for classValue, classSummaries in summaries.items():
         probabilities[classValue] = 1
         for i in range(len(classSummaries)):
             mean, stdev = classSummaries[i]
@@ -65,7 +65,7 @@ def calculateClassProbabilities(summaries, inputVector):
 def predict(summaries, inputVector):
     probabilities = calculateClassProbabilities(summaries, inputVector)
     bestLabel, bestProb = None, -1
-    for classValue, probability in probabilities.iteritems():
+    for classValue, probability in probabilities.items():
         if bestLabel is None or probability > bestProb:
             bestProb = probability
             bestLabel = classValue
@@ -90,12 +90,12 @@ def main():
     splitRatio = 0.67
     dataset = loadCsv(filename)
     trainingSet, testSet = splitDataset(dataset, splitRatio)
-    print('Split {0} rows into train={1} and test={2} rows').format(len(dataset), len(trainingSet), len(testSet))
+    print('Split {0} rows into train={1} and test={2} rows'.format(len(dataset), len(trainingSet), len(testSet)))
     # prepare model
     summaries = summarizeByClass(trainingSet)
     # test model
     predictions = getPredictions(summaries, testSet)
     accuracy = getAccuracy(testSet, predictions)
-    print('Accuracy: {0}%').format(accuracy)
+    print('Accuracy: {0}%'.format(accuracy))
  
 main()
