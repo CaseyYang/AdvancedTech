@@ -26,6 +26,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="pima-indians-diabetes.data.csv" />
+    <Content Include="说明.txt" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

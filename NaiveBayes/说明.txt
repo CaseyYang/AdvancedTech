@@ -1,0 +1,3 @@
+基于http://python.jobbole.com/81019/实现一个贝叶斯分类器。
+数据为pima-indians-diabetes.data.csv,最后一列为是否患有糖尿病的结果。
+计算先验概率过程中，原文中患病与否的概率为1（即getPredictions(summaries, testSet, False)）；本项目修改为根据训练集中患病比例确定的患病概率（即predictions = getPredictions(summaries, testSet, True)）。程序运行1000中，有18%的情况下后者精度比前者更高。
